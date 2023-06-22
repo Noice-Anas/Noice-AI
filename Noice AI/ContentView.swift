@@ -92,7 +92,7 @@ final class Content_ViewModel: ObservableObject {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let model):
-                    let output = model.choices.first?.text ?? "Nothing came back"
+                    let output = model.choices?.first?.text ?? "Nothing came back"
                     completion(output)
                 case .failure(let errorModel):
                     print("There was a failure 😥 \(errorModel.localizedDescription)")
